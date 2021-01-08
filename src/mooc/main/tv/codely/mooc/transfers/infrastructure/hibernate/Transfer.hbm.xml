@@ -1,0 +1,36 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="tv.codely.mooc.transfers.domain.Transfer" table="Transfer">
+        <composite-id name="id" class="tv.codely.mooc.transfers.domain.TransferId" access="field">
+            <key-property column="id" name="value" length="36" access="field" />
+        </composite-id>
+
+        <component name="date" class="tv.codely.mooc.transfers.domain.TransferDate" access="field">
+            <property name="value" column="date" type="string" access="field" />
+        </component>
+
+        <component name="time" class="tv.codely.mooc.transfers.domain.TransferTime" access="field">
+            <property name="value" column="time" type="string" access="field" />
+        </component>
+
+        <component name="accountOrigin" class="tv.codely.mooc.transfers.domain.TransferAccountOrigin" access="field">
+            <property name="value" column="accountOrigin" type="string" access="field" />
+        </component>
+
+        <component name="accountDestiny" class="tv.codely.mooc.transfers.domain.TransferAccountDestiny" access="field">
+            <property name="value" column="accountDestiny" type="string" access="field" />
+        </component>
+
+        <component name="amount" class="tv.codely.mooc.transfers.domain.TransferAmount" access="field">
+            <property name="value" column="amount" type="string" access="field" />
+        </component>
+
+        <component name="concept" class="tv.codely.mooc.transfers.domain.TransferConcept" access="field">
+            <property name="value" column="concept" type="string" access="field" />
+        </component>
+    </class>
+</hibernate-mapping>

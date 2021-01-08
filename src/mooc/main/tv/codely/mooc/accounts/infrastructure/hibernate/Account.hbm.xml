@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+    <class name="tv.codely.mooc.accounts.domain.Account" table="Account">
+        <composite-id name="number" class="tv.codely.mooc.accounts.domain.AccountNumber" access="field">
+            <key-property column="number" name="value" length="36" access="field" />
+        </composite-id>
+
+        <component name="amount" class="tv.codely.mooc.accounts.domain.AccountAmount" access="field">
+            <property name="value" column="amount" type="string" access="field" />
+        </component>
+
+        <component name="user" class="tv.codely.mooc.accounts.domain.AccountUser" access="field">
+            <property name="value" column="user" type="string" access="field" />
+        </component>
+
+        <property name="active" type="java.lang.Boolean" column="active" access="field" />
+
+    </class>
+</hibernate-mapping>
